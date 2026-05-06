@@ -1,6 +1,10 @@
 import { Factory, LayoutGrid } from "lucide-react"
 
-export function PortalHeader() {
+interface PortalHeaderProps {
+  appCount: number
+}
+
+export function PortalHeader({ appCount }: PortalHeaderProps) {
   return (
     <header
       className="w-full"
@@ -17,9 +21,15 @@ export function PortalHeader() {
               Manufacturing Operations Suite
             </span>
           </div>
-          <div className="flex items-center gap-2 text-xs" style={{ color: "var(--header-muted)" }}>
-            <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            <span>All systems operational</span>
+          <div className="flex items-center gap-4">
+            <span className="text-xs font-semibold tracking-wide" style={{ color: "var(--header-muted)" }}>
+              By Uttam Innovative Solution
+            </span>
+            <div className="w-px h-4 bg-white/10" />
+            <div className="flex items-center gap-2 text-xs" style={{ color: "var(--header-muted)" }}>
+              <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+              <span>All systems operational</span>
+            </div>
           </div>
         </div>
 
@@ -42,7 +52,7 @@ export function PortalHeader() {
           {/* Stats row */}
           <div className="flex items-center gap-6 mt-2 md:mt-0">
             <div className="flex flex-col items-center gap-0.5">
-              <span className="text-2xl font-bold" style={{ color: "var(--header-fg)" }}>7</span>
+              <span className="text-2xl font-bold" style={{ color: "var(--header-fg)" }}>{appCount}</span>
               <span className="text-xs" style={{ color: "var(--header-muted)" }}>Applications</span>
             </div>
             <div className="w-px h-8 bg-white/10" />
