@@ -130,7 +130,7 @@ const applications = [
 export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <PortalHeader />
+      <PortalHeader appCount={applications.length} />
 
       <main className="flex-1 max-w-7xl mx-auto w-full px-6 lg:px-10 py-10">
         {/* Grid */}
